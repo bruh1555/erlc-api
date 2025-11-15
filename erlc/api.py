@@ -146,5 +146,5 @@ class ServerAPI:
             return True
         else:
             raise execptions.ErlcExecption(
-                f"Unexpected response: {response.status.code}", client=self
+                f"Unexpected response: {responsedata.status.code}", client=self
             )

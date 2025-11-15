@@ -141,7 +141,8 @@ class ServerAPI:
 
     def run_server_command(self, command: str):
         response = self.client._post("/server/command", data={"command": command})
-        if response.get("message") == "Success":
+        responsedata = response.json()
+        if responsedata.get("message") == "Success":
             return True
         else:
             raise execptions.ErlcExecption(
